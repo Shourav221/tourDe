@@ -16,19 +16,17 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: leading,
-      title: InkWell(
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => destination));
-        },
-        child: Text(
-          '$title',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w900,
-          ),
+      title: Text(
+        '$title',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w900,
         ),
       ),
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => destination));
+      },
     );
     ;
   }

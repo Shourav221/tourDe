@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tour_de/buttons/iconButton.dart';
-import 'package:tour_de/pages/location.dart';
+import 'package:tour_de/tabBarPages/location.dart';
+import '../Widget/CityCart.dart';
 import '../Widget/drawerList.dart';
 import 'logIn.dart';
 
@@ -204,47 +204,34 @@ class _homePageState extends State<homePage> {
                     ),
                   ),
                 ),
+
               ],
             ),
           ),
           body: TabBarView(children: [
+            // first tab
             Center(
                 child: Icon(
               Icons.home,
               size: 50.h,
             )),
+            //Sceond tab
             Center(
                 child: Icon(
               Icons.home,
               size: 50.h,
             )),
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(right: 220.w),
-                    child: Text(
-                      'Places',
-                      style: TextStyle(
-                        fontSize: 25.h,
-                        color: Colors.teal,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  location(name: 'Ashish',Photo: 'https://www.theknickerbocker.com/content/uploads/2024/02/knb_nyc_landmarks_times_square_1138719689.webp',)
-                ],
+
+            // 3rd tab
+            location(),
+
+            //4th tab
+            Center(
+              child: FaIcon(
+                FontAwesomeIcons.fire,
+                size: 30,
               ),
             ),
-            Center(
-                child: Icon(
-              Icons.home,
-              size: 50.h,
-            )),
           ])),
     );
   }

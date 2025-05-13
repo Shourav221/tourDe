@@ -1,72 +1,121 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tour_de/Widget/hotelCart.dart';
+import 'package:tour_de/buttons/iconButton.dart';
+
+import '../Widget/CityCart.dart';
 
 class location extends StatelessWidget {
-  final String name;
-  final String Photo;
-  final double rating;
-  const location({super.key, required this.name, required this.Photo,required this.rating});
+  const location({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.h),
-      padding: EdgeInsets.all(10.h),
-      height: 160.h,
-      width: 200.w,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.deepPurple,
-              offset: Offset(4, 4),
-              blurRadius: 10.r,
-            )
-          ]),
-      child: Column(
-        children: [
-          Stack(
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(right: 270.w, top: 10.h),
+          child: Text(
+            'Places',
+            style: TextStyle(
+                color: Colors.teal,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            // this row shows the place picture,place location, place ratting
             children: [
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network('$Photo',
-                      fit: BoxFit.cover, height: 123.h, width: 180.h)),
-              Positioned(
-                bottom: 10.h,
-                left: 10.w,
-                child: Container(
-                  height: 20,
-                  padding: EdgeInsets.all(5),
-                  color: Colors.white,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '$rating',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.sp,
-                      ),
-                    ),
-                  ),
-                ),
+              Citycart(
+                name: 'Cox\'s Bazar',
+                Photo:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoNE0fhlQgpWjNNtUnugodaTpsBAhO7H3AqQ&s',
+              ),
+              Citycart(
+                name: 'Dhaka',
+                Photo:
+                    'https://cdn.britannica.com/69/6269-050-7EE9410A/Boat-traffic-Buriganga-River-Bangladesh-Dhaka.jpg',
+              ),
+              Citycart(
+                name: 'Sylhet',
+                Photo:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_uWQOBJt5a3hRxQUeHvsW6yeZz_155bDw7Q&s',
+              ),
+              Citycart(
+                name: 'Rangamati',
+                Photo:
+                    'https://cdn.britannica.com/80/137580-050-9C6A745A/Hanging-Bridge-Kaptai-Lake-Rangamati-Bangl.jpg',
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 1.h),
-            child: Text(
-              '$name',
-              style: TextStyle(
-                color: Colors.deepPurple,
-                fontWeight: FontWeight.w900,
-                fontSize: 16.sp,
-              ),
-            ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 270.w, top: 10.h),
+          child: Text(
+            'Hotel',
+            style: TextStyle(
+                color: Colors.teal,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900),
           ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              hotelCart(
+                  hotelName: 'Hotel Redisson',
+                  hotelPicture:
+                      'https://hoteltechnologynews.com/wp-content/uploads/2019/08/Radisson-Hotel.jpeg',
+                  status: '5 Star'),
+              hotelCart(
+                  hotelName: 'Hotel Momo Inn',
+                  hotelPicture:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD_K1pnhkf5g_f5SBR2E7OOKvrha0rsvr6aw&s',
+                  status: '5 Star'),
+              hotelCart(
+                  hotelName: 'Hotel the cox today',
+                  hotelPicture:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScr-1n7HfOaQGZYvsPOeiQL9STKblbPVGCNQ&s',
+                  status: '5 Star'),
+              hotelCart(
+                  hotelName: 'Sea Paral Hotel & Resort',
+                  hotelPicture:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD_IhW5Cm9VdD28ZBSJW9et9X8WnvLNZ-D-Q&s',
+                  status: '5 Star'),
+            ],
+          ),
+        ),
+
+        // for vehicle section
+        Padding(
+          padding: EdgeInsets.only(right: 270.w, top: 10.h),
+          child: Text(
+            'Vehicle',
+            style: TextStyle(
+                color: Colors.teal,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            iconButtonCustom(icon: FontAwesomeIcons.bus),
+            iconButtonCustom(icon: FontAwesomeIcons.shuttleVan),
+            iconButtonCustom(icon: FontAwesomeIcons.carSide),
+            iconButtonCustom(icon: FontAwesomeIcons.motorcycle),
+          ],
+        ),
+      ],
     );
   }
 }
