@@ -1,0 +1,2 @@
+D:/DIU/FLUTTER/Ostad/TourDe/android/app/.cxx/Debug/485b1674/x86/CMakeFiles/edit_cache.dir
+D:/DIU/FLUTTER/Ostad/TourDe/android/app/.cxx/Debug/485b1674/x86/CMakeFiles/rebuild_cache.dir
