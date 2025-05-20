@@ -30,7 +30,7 @@ class hotelCart extends StatelessWidget {
             children: [
               ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network('$hotelPicture',
+                  child: Image.asset('$hotelPicture',
                       fit: BoxFit.cover, height: 123.h, width: 180.h)),
               Positioned(
                 bottom: 10.h,

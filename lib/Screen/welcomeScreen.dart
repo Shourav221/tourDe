@@ -18,7 +18,7 @@ class Welcomescreen extends StatelessWidget {
             backgroundColor: Colors.white,
             radius: 0.75.sh,
             child: Image.asset(
-              'asset/logo.png',
+              'asset/Images/logo/logo.png',
               height: 250.h,
               width: 250.w,
               fit: BoxFit.contain,

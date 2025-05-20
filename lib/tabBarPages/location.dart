@@ -31,22 +31,22 @@ class location extends StatelessWidget {
               Citycart(
                 name: 'Cox\'s Bazar',
                 Photo:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoNE0fhlQgpWjNNtUnugodaTpsBAhO7H3AqQ&s',
+                    'asset/Images/place/cox.png',
               ),
               Citycart(
                 name: 'Dhaka',
                 Photo:
-                    'https://cdn.britannica.com/69/6269-050-7EE9410A/Boat-traffic-Buriganga-River-Bangladesh-Dhaka.jpg',
+                    'asset/Images/place/dhaka.png',
               ),
               Citycart(
                 name: 'Sylhet',
                 Photo:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_uWQOBJt5a3hRxQUeHvsW6yeZz_155bDw7Q&s',
+                    'asset/Images/place/sylhet.png',
               ),
               Citycart(
                 name: 'Rangamati',
                 Photo:
-                    'https://cdn.britannica.com/80/137580-050-9C6A745A/Hanging-Bridge-Kaptai-Lake-Rangamati-Bangl.jpg',
+                    'asset/Images/place/rangamati.png',
               ),
             ],
           ),
@@ -71,22 +71,22 @@ class location extends StatelessWidget {
               hotelCart(
                   hotelName: 'Hotel Redisson',
                   hotelPicture:
-                      'https://hoteltechnologynews.com/wp-content/uploads/2019/08/Radisson-Hotel.jpeg',
+                      'asset/Images/hotels/radission.png',
                   status: '5 Star'),
               hotelCart(
                   hotelName: 'Hotel Momo Inn',
                   hotelPicture:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD_K1pnhkf5g_f5SBR2E7OOKvrha0rsvr6aw&s',
+                      'asset/Images/hotels/momoin.png',
                   status: '5 Star'),
               hotelCart(
                   hotelName: 'Hotel the cox today',
                   hotelPicture:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScr-1n7HfOaQGZYvsPOeiQL9STKblbPVGCNQ&s',
+                      'asset/Images/hotels/coxtoday.png',
                   status: '5 Star'),
               hotelCart(
                   hotelName: 'Sea Paral Hotel & Resort',
                   hotelPicture:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD_IhW5Cm9VdD28ZBSJW9et9X8WnvLNZ-D-Q&s',
+                      'asset/Images/hotels/seeparal.png',
                   status: '5 Star'),
             ],
           ),

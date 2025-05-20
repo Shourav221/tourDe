@@ -31,7 +31,7 @@ class Citycart extends StatelessWidget {
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network('$Photo',
+              child: Image.asset('$Photo',
                   fit: BoxFit.cover, height: 123.h, width: 180.h)),
           Padding(
             padding: EdgeInsets.only(top: 1.h),

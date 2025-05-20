@@ -40,13 +40,14 @@ class _homePageState extends State<homePage> {
           });
           return Scaffold(
             appBar: AppBar(
+              elevation: 8,
               toolbarHeight: 70.h,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(50),
                 ),
-                side: BorderSide(color: Colors.black),
+                side: BorderSide(style: BorderStyle.none),
               ),
               leading: Builder(
                 builder: (context) => IconButton(
@@ -87,7 +88,9 @@ class _homePageState extends State<homePage> {
                     icon: FaIcon(
                       icon,
                       size: 30,
-                      color: _selectedTab == index ? Colors.teal : Colors.grey, // Dynamic color
+                      color: _selectedTab == index
+                          ? Colors.teal
+                          : Colors.grey, // Dynamic color
                     ),
                   );
                 }).toList(),
@@ -171,7 +174,15 @@ class _homePageState extends State<homePage> {
                     child: Padding(
                       padding: EdgeInsets.only(bottom: 20.h),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: Size(10.w, 100),
+                          shadowColor: Colors.grey,
+                          backgroundColor: Colors.white,
+                        ),
                         child: Text(
                           'Log Out',
                           style: TextStyle(
@@ -179,11 +190,6 @@ class _homePageState extends State<homePage> {
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
                           ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: Size(10.w, 100),
-                          shadowColor: Colors.grey,
-                          backgroundColor: Colors.white,
                         ),
                       ),
                     ),
