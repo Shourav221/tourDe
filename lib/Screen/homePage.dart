@@ -16,6 +16,61 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   TextEditingController searchController = TextEditingController();
 
+  // For the Alert popUp messege
+  void showAlertDialog() {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.warning,
+                    color: Colors.red,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    'Warning',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              content: Text(
+                'Are you sure to exit from App?',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: Colors.grey,
+                ),
+              ),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                          (Route<dynamic>route) => false,
+                      );
+                    },
+                    child: Text(
+                      'Confirm',
+                      style: TextStyle(color: Colors.black, fontSize: 16.sp),
+                    )),
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(color: Colors.black, fontSize: 16.sp),
+                    )),
+              ],
+            ));
+  }
+
   int _selectedTab = 0; // Tracks the currently selected tab index
 
   List<IconData> _icons = [
@@ -168,6 +223,8 @@ class _homePageState extends State<homePage> {
                     ),
                   ),
                   SizedBox(height: 5.h),
+
+                  // For LogOut button
                   SizedBox(
                     width: 200.w,
                     height: 50.h,
@@ -175,8 +232,9 @@ class _homePageState extends State<homePage> {
                       padding: EdgeInsets.only(bottom: 20.h),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) => Login()));
+                          setState(() {
+                            showAlertDialog();
+                          });
                         },
                         style: ElevatedButton.styleFrom(
                           fixedSize: Size(10.w, 100),

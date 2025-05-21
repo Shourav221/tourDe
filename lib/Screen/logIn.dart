@@ -200,13 +200,11 @@ class _LoginState extends State<Login> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircleAvatar(
-                            radius: 0.038.sw,
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.google),
-                              color: Color(0xFF4285F4),
-                            )),
+                        IconButton(
+                          onPressed: () {},
+                          icon: FaIcon(FontAwesomeIcons.google),
+                          color: Color(0xFF4285F4),
+                        ),
                         IconButton(
                             onPressed: () {},
                             icon: CircleAvatar(
